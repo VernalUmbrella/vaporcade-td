@@ -59,7 +59,7 @@ func update_cursor() -> void:
 func place_tower(tower_stats: TowerStats) -> void:
 	if not tile_cursor.visible:
 		return
-	if tile_cursor.get_overlapping_areas():
+	if tile_cursor.get_overlapping_areas(): # cursor on tower
 		return
 	if game_stats.money < tower_stats.cost:
 		# TODO: flash money red, play sound
@@ -75,8 +75,7 @@ func _on_enemy_died(enemy_stats: EnemyStats):
 	game_stats.money += enemy_stats.loot
 
 func _on_enemy_leaked():
-	if game_stats.lives_left > 0:
-		game_stats.lives_left -= 1
+	game_stats.lives_left -= 1
 
 func _on_tower_selected(tower_stats: TowerStats):
 	selected_tower = tower_stats

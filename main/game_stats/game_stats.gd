@@ -10,11 +10,11 @@ extends Resource
 		emit_changed()
 @export var lives_left: int = 10:
 	set(value):
+		if value <= 0 and lives_left > 0:
+			Events.game_lost.emit()
 		if lives_left == value:
 			return
 		lives_left = value
-		if lives_left <= 0:
-			Events.game_lost.emit()
 		emit_changed()
 @export var wave_sequence: Array[Wave]
 @export var current_wave: int = 0:

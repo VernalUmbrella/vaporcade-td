@@ -5,7 +5,7 @@ extends Control
 
 @onready var coin_button: Button = %CoinButton
 @onready var start_button: Button = %StartButton
-@onready var coin_label: Label = %CoinLabel
+@onready var coin_label: CoinLabel = %CoinLabel
 @onready var credits_panel: Panel = %CreditsPanel
 
 var max_coins: int = 3
@@ -33,6 +33,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_coin_button_pressed() -> void:
 	# TODO: play sound
+	coin_label.force_visible()
 	if coins < max_coins:
 		coins += 1
 		return

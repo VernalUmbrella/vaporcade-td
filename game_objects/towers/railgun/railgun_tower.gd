@@ -28,8 +28,7 @@ func _attack(_delta: float) -> void:
 	if not current_targets:
 		sprite.play("default")
 		return
-	print("I'M A CHARGIN MY LASER")
-	sprite.play("charging") # TODO for some reason the animation doesn't reset sometimes
+	sprite.play("charging")
 	attack_timer.start()
 	shot.clear_points()
 	for t: Enemy in current_targets:
