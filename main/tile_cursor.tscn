@@ -1,19 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3j20yagie20j"]
+[gd_scene load_steps=7 format=3 uid="uid://b3j20yagie20j"]
 
 [ext_resource type="Script" path="res://main/tile_cursor.gd" id="1_rmcsr"]
+[ext_resource type="Texture2D" uid="uid://dh23smpxxoefi" path="res://main/tile_cursor_f0.tres" id="2_7v8i7"]
 [ext_resource type="PackedScene" uid="uid://cu0rx3w7pnvsb" path="res://main/tower_ghost.tscn" id="2_rcu3u"]
+[ext_resource type="Texture2D" uid="uid://des2ldw7h07jr" path="res://main/tile_cursor_f1.tres" id="3_xx727"]
 
-[sub_resource type="Gradient" id="Gradient_675pw"]
-offsets = PackedFloat32Array(0.525974, 1)
-colors = PackedColorArray(0.576471, 0.576471, 0.576471, 0, 0.996078, 0.854902, 0.517647, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mjtyk"]
-gradient = SubResource("Gradient_675pw")
-width = 8
-height = 8
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 1)
+[sub_resource type="SpriteFrames" id="SpriteFrames_irafl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7v8i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xx727")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3r6b"]
 size = Vector2(7, 7)
@@ -23,9 +27,11 @@ collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_rmcsr")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, 4)
-texture = SubResource("GradientTexture2D_mjtyk")
+sprite_frames = SubResource("SpriteFrames_irafl")
+autoplay = "default"
+frame_progress = 0.995471
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 4)
