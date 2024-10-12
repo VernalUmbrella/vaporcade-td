@@ -49,7 +49,7 @@ func update_cursor() -> void:
 	tile_cursor.hide()
 	var mouse_position: Vector2 = get_local_mouse_position()
 	hovered_tile = map.local_to_map(mouse_position)
-	if hovered_tile.x not in range(BOARD_DIMENSIONS.x) or hovered_tile.y not in range(BOARD_DIMENSIONS.y):
+	if hovered_tile != hovered_tile.clamp(Vector2i.ZERO, BOARD_DIMENSIONS - Vector2i(1,1)):
 		return
 	if not map.get_cell_tile_data(hovered_tile).get_custom_data("buildable"):
 		return

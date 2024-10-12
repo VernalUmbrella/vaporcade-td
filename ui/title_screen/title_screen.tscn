@@ -145,6 +145,7 @@ bus = &"SFX"
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_m3wby")
 autoplay = true
+bus = &"Music"
 
 [connection signal="timeout" from="CoinLabel/Timer" to="CoinLabel" method="_on_timer_timeout"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CoinButton" to="." method="_on_coin_button_pressed"]

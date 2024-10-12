@@ -24,11 +24,21 @@ func _ready() -> void:
 	sprite.play("default")
 
 func _process(delta: float) -> void:
+	if not attack_timer.is_stopped():
+		return
 	current_targets = locate_targets()
 	_attack(delta)
 
+func locate_targets() -> Array[Enemy]:
+	# Overrides the base method; doesn't sort targets
+	var candidates: Array[Enemy]
+	for overlapper: Area2D in range_area.get_overlapping_areas():
+		var area_owner: Enemy = overlapper.get_parent()
+		candidates.append(area_owner)
+	return candidates
+
 func _attack(_delta: float) -> void:
-	if not attack_timer.is_stopped() or not current_targets:
+	if not current_targets:
 		return
 	var pulse_tween := create_tween()
 	pulse_tween.tween_property(pulse_visual, "modulate", Color.TRANSPARENT, flash_duration).from(Color(Color.WHITE, max_opacity))

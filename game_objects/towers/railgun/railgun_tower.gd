@@ -15,16 +15,17 @@ func _ready() -> void:
 	shot = Line2D.new()
 	shot.default_color = tower_stats.attack_color
 	shot.width = 2
+	shot.z_index = 5
 	add_child(shot)
 	sprite.play("default")
 
 func _process(delta: float) -> void:
+	if not attack_timer.is_stopped():
+		return
 	current_targets = locate_targets()
 	_attack(delta)
 
 func _attack(_delta: float) -> void:
-	if not attack_timer.is_stopped():
-		return
 	if not current_targets:
 		sprite.play("default")
 		return

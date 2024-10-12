@@ -1,16 +1,10 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://bjde6jc5yq582"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://bjde6jc5yq582"]
 
 [ext_resource type="Script" path="res://game_objects/enemies/enemy_stats.gd" id="1_fajqc"]
 [ext_resource type="SpriteFrames" uid="uid://c3n76ssrc61ga" path="res://game_objects/enemies/fast_enemy/fast_enemy_frames.tres" id="2_jnqyl"]
-[ext_resource type="Texture2D" uid="uid://bumm1ql2i8us" path="res://game_objects/enemies/fast_enemy/fast_enemy.png" id="3_16n1s"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fefih"]
-atlas = ExtResource("3_16n1s")
-region = Rect2(0, 0, 8, 8)
 
 [resource]
 script = ExtResource("1_fajqc")
-static_texture = SubResource("AtlasTexture_fefih")
 sprite_frames = ExtResource("2_jnqyl")
 name = "Swiff"
 max_health = 2.0
