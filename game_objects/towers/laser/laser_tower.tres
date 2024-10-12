@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="TowerStats" load_steps=5 format=3 uid="uid://7voeqhthrrmn"]
+[gd_resource type="Resource" script_class="TowerStats" load_steps=6 format=3 uid="uid://7voeqhthrrmn"]
 
 [ext_resource type="Script" path="res://game_objects/towers/tower_stats.gd" id="1_oiour"]
 [ext_resource type="SpriteFrames" uid="uid://ne6o46rqbfhy" path="res://game_objects/towers/laser/laser_tower_frames.tres" id="2_dcxdd"]
-[ext_resource type="Texture2D" uid="uid://dcb0c75et5fo2" path="res://game_objects/towers/laser/laser_tower.png" id="3_8nnfa"]
+[ext_resource type="Texture2D" uid="uid://dtl7da1c18fa" path="res://game_objects/towers/laser/laser_tower_tiles.png" id="3_gh1rg"]
 [ext_resource type="Script" path="res://game_objects/towers/laser/laser_tower.gd" id="3_nwy2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqb11"]
+atlas = ExtResource("3_gh1rg")
+region = Rect2(0, 0, 8, 8)
 
 [resource]
 script = ExtResource("1_oiour")
-texture = ExtResource("3_8nnfa")
+texture = SubResource("AtlasTexture_pqb11")
 sprite_frames = ExtResource("2_dcxdd")
 attack_color = Color(0, 1, 1, 1)
 name = "Laser"

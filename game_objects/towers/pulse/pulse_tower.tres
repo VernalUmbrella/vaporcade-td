@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://game_objects/towers/tower_stats.gd" id="1_ofq7b"]
 [ext_resource type="SpriteFrames" uid="uid://b8agrvq6hto14" path="res://game_objects/towers/pulse/pulse_tower_frames.tres" id="2_fadx7"]
 [ext_resource type="Script" path="res://game_objects/towers/pulse/pulse_tower.gd" id="2_gsidc"]
-[ext_resource type="Texture2D" uid="uid://ciga635u56b0h" path="res://game_objects/towers/tileset_2.png" id="3_al3x8"]
+[ext_resource type="Texture2D" uid="uid://d3sbwrslw1m2v" path="res://game_objects/towers/pulse/pulse_tower_tiles.png" id="3_lyeao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8a2i7"]
-atlas = ExtResource("3_al3x8")
-region = Rect2(0, 8, 8, 8)
+atlas = ExtResource("3_lyeao")
+region = Rect2(0, 0, 8, 8)
 
 [resource]
 script = ExtResource("1_ofq7b")

@@ -1,20 +1,20 @@
 [gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://ne6o46rqbfhy"]
 
-[ext_resource type="Texture2D" uid="uid://ciga635u56b0h" path="res://game_objects/towers/tileset_2.png" id="1_5twbf"]
+[ext_resource type="Texture2D" uid="uid://dtl7da1c18fa" path="res://game_objects/towers/laser/laser_tower_tiles.png" id="1_3x7ac"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_svadf"]
-atlas = ExtResource("1_5twbf")
-region = Rect2(0, 16, 8, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f64aa"]
+atlas = ExtResource("1_3x7ac")
+region = Rect2(0, 0, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yn7f8"]
-atlas = ExtResource("1_5twbf")
-region = Rect2(8, 16, 8, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eyrj"]
+atlas = ExtResource("1_3x7ac")
+region = Rect2(8, 0, 8, 8)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_svadf")
+"texture": SubResource("AtlasTexture_f64aa")
 }],
 "loop": true,
 "name": &"default",
@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yn7f8")
+"texture": SubResource("AtlasTexture_6eyrj")
 }],
 "loop": true,
 "name": &"firing",

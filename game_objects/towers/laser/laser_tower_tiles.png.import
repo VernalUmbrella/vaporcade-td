@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciga635u56b0h"
-path="res://.godot/imported/tileset_2.png-fa34d9daa3df4c9060c96ed2ae74a651.ctex"
+uid="uid://dtl7da1c18fa"
+path="res://.godot/imported/laser_tower_tiles.png-ae74f176796e5a225c382413b522a7dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_objects/towers/tileset_2.png"
-dest_files=["res://.godot/imported/tileset_2.png-fa34d9daa3df4c9060c96ed2ae74a651.ctex"]
+source_file="res://game_objects/towers/laser/laser_tower_tiles.png"
+dest_files=["res://.godot/imported/laser_tower_tiles.png-ae74f176796e5a225c382413b522a7dd.ctex"]
 
 [params]
 

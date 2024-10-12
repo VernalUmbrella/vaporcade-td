@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cgcjyyw4wgjw6"]
+
+[ext_resource type="Texture2D" uid="uid://bhjnof14ig3ks" path="res://game_objects/towers/gamma/gamma_tower_tiles.png" id="1_qvt6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08pua"]
+atlas = ExtResource("1_qvt6t")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xn5b"]
+atlas = ExtResource("1_qvt6t")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_666gh"]
+atlas = ExtResource("1_qvt6t")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l5rx"]
+atlas = ExtResource("1_qvt6t")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwgf8"]
+atlas = ExtResource("1_qvt6t")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrgch"]
+atlas = ExtResource("1_qvt6t")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xy3r"]
+atlas = ExtResource("1_qvt6t")
+region = Rect2(48, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08pua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xn5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_666gh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l5rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwgf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrgch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xy3r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
