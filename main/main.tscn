@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ccmqm7fx46umd"]
+[gd_scene load_steps=9 format=4 uid="uid://ccmqm7fx46umd"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_174vw"]
 [ext_resource type="Resource" uid="uid://dnlk6dm14k4rn" path="res://main/game_stats/easy_stats.tres" id="2_q0308"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3j20yagie20j" path="res://main/tile_cursor.tscn" id="3_3wfm8"]
 [ext_resource type="PackedScene" uid="uid://b8wrls8mbvp8i" path="res://ui/hud/hud.tscn" id="4_8n207"]
 [ext_resource type="Script" path="res://game_objects/enemies/enemy_path.gd" id="5_2di7r"]
+[ext_resource type="AudioStream" uid="uid://bumnlqugwjdnr" path="res://main/music_gameplay.ogg" id="7_m1y2m"]
 
 [sub_resource type="Curve2D" id="Curve2D_dvke0"]
 bake_interval = 1.0
@@ -46,5 +47,10 @@ metadata/_edit_lock_ = true
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("4_8n207")]
 game_stats = ExtResource("2_q0308")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_m1y2m")
+autoplay = true
+bus = &"Music"
 
 [connection signal="timeout" from="EnemyPath/SpawnTimer" to="EnemyPath" method="_on_spawn_timer_timeout"]

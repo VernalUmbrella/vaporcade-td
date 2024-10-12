@@ -7,6 +7,7 @@ extends Control
 @onready var start_button: Button = %StartButton
 @onready var coin_label: CoinLabel = %CoinLabel
 @onready var credits_panel: Panel = %CreditsPanel
+@onready var coin_sound: AudioStreamPlayer = $CoinSound
 
 var max_coins: int = 3
 
@@ -32,10 +33,10 @@ func _input(event: InputEvent) -> void:
 		credits_panel.visible = false
 
 func _on_coin_button_pressed() -> void:
-	# TODO: play sound
 	coin_label.force_visible()
 	if coins < max_coins:
 		coins += 1
+		coin_sound.play()
 		return
 	coin_button.text = "INSERT COIN"
 	coins = 0
