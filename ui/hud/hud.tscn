@@ -2,9 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dljh7gpbntv8f" path="res://ui/global_theme.tres" id="1_pkt7u"]
 [ext_resource type="Script" path="res://ui/hud/hud.gd" id="1_vad6r"]
-[ext_resource type="Texture2D" uid="uid://cwwns0q2nk1f5" path="res://!global/placeholder_gradient.tres" id="2_8nru3"]
-[ext_resource type="Script" path="res://ui/hud/tower_button.gd" id="3_q8wr8"]
-[ext_resource type="Resource" uid="uid://7voeqhthrrmn" path="res://game_objects/towers/laser/laser_tower.tres" id="4_6f0sp"]
+[ext_resource type="PackedScene" uid="uid://vcv43lfo1661" path="res://ui/hud/tower_button.tscn" id="2_nqscu"]
 [ext_resource type="Resource" uid="uid://bderd3qgjtoq" path="res://game_objects/towers/pulse/pulse_tower.tres" id="5_0vkf1"]
 [ext_resource type="Resource" uid="uid://dsyxqm4ckg5oy" path="res://game_objects/towers/gamma/gamma_tower.tres" id="6_41mfy"]
 [ext_resource type="Resource" uid="uid://cng5hjf2visvo" path="res://game_objects/towers/railgun/railgun_tower.tres" id="6_85qpw"]
@@ -15,12 +13,17 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7av2e"]
 bg_color = Color(0.161251, 0.00601538, 0.00132007, 1)
 
-[sub_resource type="Gradient" id="Gradient_g72e2"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_d3dem"]
+allow_unpress = true
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_q840n"]
-gradient = SubResource("Gradient_g72e2")
-width = 8
-height = 8
+[sub_resource type="ButtonGroup" id="ButtonGroup_4b6f4"]
+allow_unpress = true
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_b0mmy"]
+allow_unpress = true
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_eioul"]
+allow_unpress = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_u2ceh"]
 line_spacing = 0.0
@@ -100,32 +103,23 @@ theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 columns = 2
 
-[node name="LaserTowerButton" type="TextureButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer"]
+[node name="LaserTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
 layout_mode = 2
-focus_mode = 0
-texture_normal = ExtResource("2_8nru3")
-script = ExtResource("3_q8wr8")
-tower_stats = ExtResource("4_6f0sp")
+button_group = SubResource("ButtonGroup_d3dem")
 
-[node name="PulseTowerButton" type="TextureButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer"]
+[node name="PulseTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
 layout_mode = 2
-focus_mode = 0
-texture_normal = ExtResource("2_8nru3")
-script = ExtResource("3_q8wr8")
+button_group = SubResource("ButtonGroup_4b6f4")
 tower_stats = ExtResource("5_0vkf1")
 
-[node name="RailgunTowerButton" type="TextureButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer"]
+[node name="RailgunTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
 layout_mode = 2
-focus_mode = 0
-texture_normal = SubResource("GradientTexture2D_q840n")
-script = ExtResource("3_q8wr8")
+button_group = SubResource("ButtonGroup_b0mmy")
 tower_stats = ExtResource("6_85qpw")
 
-[node name="GammaTower" type="TextureButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer"]
+[node name="GammaTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
 layout_mode = 2
-focus_mode = 0
-texture_normal = ExtResource("2_8nru3")
-script = ExtResource("3_q8wr8")
+button_group = SubResource("ButtonGroup_eioul")
 tower_stats = ExtResource("6_41mfy")
 
 [node name="VSeparator2" type="VSeparator" parent="MainHUD/HBar/MarginContainer/HBoxContainer"]

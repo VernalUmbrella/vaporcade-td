@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://vcv43lfo1661"]
+
+[ext_resource type="ButtonGroup" uid="uid://dt2kfswjofaj4" path="res://ui/hud/tower_button_group.tres" id="1_lhjdd"]
+[ext_resource type="Texture2D" uid="uid://cwwns0q2nk1f5" path="res://!global/placeholder_gradient.tres" id="2_k57vs"]
+[ext_resource type="Script" path="res://ui/hud/tower_button.gd" id="3_sdom4"]
+[ext_resource type="Resource" uid="uid://7voeqhthrrmn" path="res://game_objects/towers/laser/laser_tower.tres" id="4_fsnpj"]
+[ext_resource type="Texture2D" uid="uid://dh23smpxxoefi" path="res://main/tile_cursor_f0.tres" id="5_2jsnu"]
+
+[node name="TowerButton" type="TextureButton"]
+focus_mode = 0
+toggle_mode = true
+button_group = ExtResource("1_lhjdd")
+texture_normal = ExtResource("2_k57vs")
+script = ExtResource("3_sdom4")
+tower_stats = ExtResource("4_fsnpj")
+
+[node name="Highlight" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2jsnu")
