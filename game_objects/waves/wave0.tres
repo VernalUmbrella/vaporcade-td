@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Wave" load_steps=3 format=3 uid="uid://ckpd3m4y4gicm"]
 
-[ext_resource type="Resource" uid="uid://bjde6jc5yq582" path="res://game_objects/enemies/swiff.tres" id="1_tmabp"]
+[ext_resource type="Resource" uid="uid://bjde6jc5yq582" path="res://game_objects/enemies/fast_enemy/fast_enemy.tres" id="1_tmabp"]
 [ext_resource type="Script" path="res://game_objects/waves/wave.gd" id="2_y5ero"]
 
 [resource]

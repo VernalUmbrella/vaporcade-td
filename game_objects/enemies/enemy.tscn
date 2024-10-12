@@ -1,15 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhe35bgtndsyw"]
+[gd_scene load_steps=6 format=3 uid="uid://bhe35bgtndsyw"]
 
 [ext_resource type="Script" path="res://game_objects/enemies/enemy.gd" id="1_5va8q"]
-[ext_resource type="Resource" uid="uid://b3pgmwuffahgr" path="res://game_objects/enemies/slongler.tres" id="2_2pteo"]
+[ext_resource type="Resource" uid="uid://b3pgmwuffahgr" path="res://game_objects/enemies/standard_enemy/standard_enemy.tres" id="2_2pteo"]
 [ext_resource type="Theme" uid="uid://dljh7gpbntv8f" path="res://ui/global_theme.tres" id="2_b0fn4"]
-
-[sub_resource type="Gradient" id="Gradient_ohsrn"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1qy8h"]
-gradient = SubResource("Gradient_ohsrn")
-width = 8
-height = 8
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n0hxo"]
 radius = 1.0
@@ -34,8 +27,7 @@ loop = false
 script = ExtResource("1_5va8q")
 enemy_stats = ExtResource("2_2pteo")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_1qy8h")
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 centered = false
 
 [node name="Hitbox" type="Area2D" parent="."]

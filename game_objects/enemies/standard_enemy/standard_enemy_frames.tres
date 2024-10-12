@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bqdn2imubdgxd"]
+
+[ext_resource type="Texture2D" uid="uid://mvxm7mjirlpf" path="res://game_objects/enemies/standard_enemy/standard_enemy.png" id="1_3oagr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_242re"]
+atlas = ExtResource("1_3oagr")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r727e"]
+atlas = ExtResource("1_3oagr")
+region = Rect2(8, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_242re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r727e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]

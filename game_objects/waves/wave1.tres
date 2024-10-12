@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Wave" load_steps=3 format=3 uid="uid://3fobcdff3ups"]
 
-[ext_resource type="Resource" uid="uid://b3pgmwuffahgr" path="res://game_objects/enemies/slongler.tres" id="1_oa4gg"]
+[ext_resource type="Resource" uid="uid://b3pgmwuffahgr" path="res://game_objects/enemies/standard_enemy/standard_enemy.tres" id="1_oa4gg"]
 [ext_resource type="Script" path="res://game_objects/waves/wave.gd" id="2_ukq4l"]
 
 [resource]
