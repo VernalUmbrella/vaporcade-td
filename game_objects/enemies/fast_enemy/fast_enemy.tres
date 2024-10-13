@@ -7,6 +7,6 @@
 script = ExtResource("1_fajqc")
 sprite_frames = ExtResource("2_jnqyl")
 name = "Swiff"
-max_health = 2.0
-speed = 48.0
-loot = 2
+max_health = 4.0
+speed = 56.0
+loot = 1

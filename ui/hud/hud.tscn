@@ -16,10 +16,10 @@ bg_color = Color(0.161251, 0.00601538, 0.00132007, 1)
 [sub_resource type="ButtonGroup" id="ButtonGroup_d3dem"]
 allow_unpress = true
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_4b6f4"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_b0mmy"]
 allow_unpress = true
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_b0mmy"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_4b6f4"]
 allow_unpress = true
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_eioul"]
@@ -107,15 +107,15 @@ columns = 2
 layout_mode = 2
 button_group = SubResource("ButtonGroup_d3dem")
 
-[node name="PulseTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_4b6f4")
-tower_stats = ExtResource("5_0vkf1")
-
 [node name="RailgunTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
 layout_mode = 2
 button_group = SubResource("ButtonGroup_b0mmy")
 tower_stats = ExtResource("6_85qpw")
+
+[node name="PulseTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_4b6f4")
+tower_stats = ExtResource("5_0vkf1")
 
 [node name="GammaTowerButton" parent="MainHUD/HBar/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("2_nqscu")]
 layout_mode = 2

@@ -9,8 +9,8 @@ const BOARD_DIMENSIONS := Vector2i(16, 9)
 const TOWER_RESOURCES: Array[TowerStats] = [
 	null,
 	preload("res://game_objects/towers/laser/laser_tower.tres"),
-	preload("res://game_objects/towers/pulse/pulse_tower.tres"),
 	preload("res://game_objects/towers/railgun/railgun_tower.tres"),
+	preload("res://game_objects/towers/pulse/pulse_tower.tres"),
 	preload("res://game_objects/towers/gamma/gamma_tower.tres"),
 ]
 

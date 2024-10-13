@@ -38,6 +38,7 @@ func _on_wave_started() -> void:
 
 func end_wave() -> void:
 	active = false
+	game_stats.money += current_wave.reward
 	game_stats.current_wave += 1
 	Events.wave_ended.emit()
 	if game_stats.current_wave >= game_stats.wave_sequence.size() and game_stats.lives_left > 0:

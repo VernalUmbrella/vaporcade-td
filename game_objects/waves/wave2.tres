@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("2_nlwbd")
 enemy_stats = ExtResource("1_60n0h")
-count = 15
-spawn_interval = 1.0
-health_multiplier = 1.0
-speed_multiplier = 1.0
+reward = 24
+count = 16
+health_multiplier = 2.0
+speed_multiplier = 1.2
+spawn_interval = 0.667

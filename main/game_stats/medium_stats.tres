@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameStats" load_steps=8 format=3 uid="uid://d0cebgj7cj7nn"]
+[gd_resource type="Resource" script_class="GameStats" load_steps=9 format=3 uid="uid://d0cebgj7cj7nn"]
 
 [ext_resource type="Script" path="res://main/game_stats/game_stats.gd" id="1_f6et8"]
 [ext_resource type="Script" path="res://game_objects/waves/wave.gd" id="2_tnq72"]
@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://dhbpgbt42s8xl" path="res://game_objects/waves/wave2.tres" id="5_elt7w"]
 [ext_resource type="Resource" uid="uid://n4dxwxf2geye" path="res://game_objects/waves/wave3.tres" id="6_nb6e7"]
 [ext_resource type="Resource" uid="uid://cxiaxu3on3pk1" path="res://game_objects/waves/wave4.tres" id="7_7c64u"]
+[ext_resource type="Resource" uid="uid://cccaqst1speru" path="res://game_objects/waves/wave5.tres" id="8_veubg"]
 
 [resource]
 script = ExtResource("1_f6et8")
 money = 50
 lives_left = 10
-wave_sequence = Array[ExtResource("2_tnq72")]([ExtResource("3_nwrqk"), ExtResource("4_i0sni"), ExtResource("5_elt7w"), ExtResource("6_nb6e7"), ExtResource("7_7c64u")])
+wave_sequence = Array[ExtResource("2_tnq72")]([ExtResource("3_nwrqk"), ExtResource("4_i0sni"), ExtResource("5_elt7w"), ExtResource("6_nb6e7"), ExtResource("7_7c64u"), ExtResource("8_veubg")])
 current_wave = 0
