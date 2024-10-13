@@ -42,8 +42,10 @@ func _input(event: InputEvent) -> void:
 	for tower_i in len(TOWER_RESOURCES):
 		if event.is_action_pressed("tower%s" % tower_i):
 			Events.tower_selected.emit(TOWER_RESOURCES[tower_i])
+			return
 	if event.is_action_pressed("place_tower") and selected_tower:
 		place_tower(selected_tower)
+		return
 
 func update_cursor() -> void:
 	tile_cursor.hide()
@@ -57,6 +59,7 @@ func update_cursor() -> void:
 	tile_cursor.show()
 
 func place_tower(tower_stats: TowerStats) -> void:
+	update_cursor()
 	if not tile_cursor.visible:
 		return
 	if tile_cursor.get_overlapping_areas(): # cursor on tower
