@@ -205,6 +205,7 @@ fit_content = true
 
 [node name="ResetButton" type="Button" parent="YouWin/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Back to Title"
 
 [connection signal="pressed" from="MainHUD/HBar/MarginContainer/HBoxContainer/WaveButton" to="." method="_on_wave_button_pressed"]
