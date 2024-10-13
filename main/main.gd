@@ -27,6 +27,7 @@ const TOWER_RESOURCES: Array[TowerStats] = [
 @onready var enemy_path: EnemyPath = $EnemyPath
 @onready var hud: HUD = $CanvasLayer/HUD
 
+static var ON_MOBILE = OS.has_feature("mobile") or OS.has_feature("web_android") or OS.has_feature("web_ios")
 var selected_tower: TowerStats
 var hovered_tile: Vector2i
 
@@ -35,10 +36,13 @@ func _ready() -> void:
 	Events.enemy_leaked.connect(_on_enemy_leaked)
 	Events.tower_selected.connect(_on_tower_selected)
 
-func _process(_delta: float) -> void:
-	update_cursor()
-
 func _input(event: InputEvent) -> void:
+	if ON_MOBILE:
+		_mobile_input(event)
+	else:
+		_desktop_input(event)
+
+func _desktop_input(event: InputEvent) -> void:
 	for tower_i in len(TOWER_RESOURCES):
 		if event.is_action_pressed("tower%s" % tower_i):
 			Events.tower_selected.emit(TOWER_RESOURCES[tower_i])
@@ -46,20 +50,35 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("place_tower") and selected_tower:
 		place_tower(selected_tower)
 		return
+	if event is InputEventMouseMotion:
+		update_cursor(get_local_mouse_position())
 
-func update_cursor() -> void:
+func _mobile_input(event: InputEvent) -> void:
+	if event.index > 0:
+		return
+	if event is InputEventScreenDrag:
+		update_cursor(event.position)
+		return
+	if event is InputEventScreenTouch:
+		if not event.pressed:
+			return
+		if (event.position - HALF_TILE_SIZE).snapped(TILE_SIZE) == tile_cursor.position:
+			place_tower(selected_tower)
+			return
+		update_cursor(event.position)
+		return
+
+func update_cursor(pointer_position: Vector2) -> void:
+	hovered_tile = map.local_to_map(pointer_position)
+	tile_cursor.position = (pointer_position - HALF_TILE_SIZE).snapped(TILE_SIZE)
 	tile_cursor.hide()
-	var mouse_position: Vector2 = get_local_mouse_position()
-	hovered_tile = map.local_to_map(mouse_position)
 	if hovered_tile != hovered_tile.clamp(Vector2i.ZERO, BOARD_DIMENSIONS - Vector2i(1,1)):
 		return
 	if not map.get_cell_tile_data(hovered_tile).get_custom_data("buildable"):
 		return
-	tile_cursor.position = (mouse_position - HALF_TILE_SIZE).snapped(TILE_SIZE)
 	tile_cursor.show()
 
 func place_tower(tower_stats: TowerStats) -> void:
-	update_cursor()
 	if not tile_cursor.visible:
 		return
 	if tile_cursor.get_overlapping_areas(): # cursor on tower
