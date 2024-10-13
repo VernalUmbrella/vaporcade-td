@@ -22,8 +22,7 @@ func _attack(delta: float) -> void:
 		return
 	if sprite.sprite_frames.has_animation("firing"):
 		sprite.play("firing")
-	for i in range(len(current_targets)):
+	for t: Enemy in current_targets:
 		laser.add_point(Vector2.ZERO)
-		var t: Enemy = current_targets[i]
 		laser.add_point((t.global_position + Main.HALF_TILE_SIZE) - global_position)
 		t.current_health -= (delta * tower_stats.damage)

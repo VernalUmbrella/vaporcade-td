@@ -13,6 +13,9 @@ var current_health: float:
 		current_health = value
 		health_bar.value = current_health
 		health_bar.visible = (current_health < enemy_stats.max_health)
+		if current_health <= 0:
+			die()
+var slowed_timer: float = 0
 
 func _ready() -> void:
 	sprite.sprite_frames = enemy_stats.sprite_frames
@@ -23,13 +26,13 @@ func _ready() -> void:
 	sprite.play("default")
 
 func _process(delta: float) -> void:
-	if current_health <= 0:
-		die()
-		return
+	if slowed_timer > 0:
+		slowed_timer = max(0, slowed_timer-delta)
+		sprite.modulate.r = inverse_lerp(1.0, 0.0, slowed_timer)
 	step_forward(delta)
 
 func step_forward(delta: float) -> void:
-	progress += enemy_stats.speed * delta
+	progress += enemy_stats.speed * delta / (1 + slowed_timer)
 	if progress_ratio >= 1.0:
 		leak()
 

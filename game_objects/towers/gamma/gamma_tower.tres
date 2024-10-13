@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://game_objects/towers/tower_stats.gd" id="1_5roya"]
 [ext_resource type="SpriteFrames" uid="uid://cgcjyyw4wgjw6" path="res://game_objects/towers/gamma/gamma_tower_frames.tres" id="2_5vyqt"]
-[ext_resource type="Script" path="res://game_objects/towers/laser/laser_tower.gd" id="2_luh1p"]
 [ext_resource type="Texture2D" uid="uid://bhjnof14ig3ks" path="res://game_objects/towers/gamma/gamma_tower_tiles.png" id="2_uuspf"]
+[ext_resource type="Script" path="res://game_objects/towers/gamma/gamma_tower.gd" id="4_neump"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r716p"]
 atlas = ExtResource("2_uuspf")
@@ -14,11 +14,11 @@ script = ExtResource("1_5roya")
 texture = SubResource("AtlasTexture_r716p")
 sprite_frames = ExtResource("2_5vyqt")
 attack_color = Color(0.2301, 0.690933, 0.550916, 1)
-name = "Gamma"
+name = "Cryo"
 cost = 32
-damage = 3.0
-attacks_per_second = 0.0
-attack_range = 3.0
-max_targets = 2
+damage = 1.0
+attacks_per_second = 1.0
+attack_range = 2.0
+max_targets = 3
 targeting_mode = 0
-tower_script = ExtResource("2_luh1p")
+tower_script = ExtResource("4_neump")
