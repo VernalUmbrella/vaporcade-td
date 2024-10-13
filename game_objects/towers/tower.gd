@@ -3,7 +3,7 @@ extends Node2D
 
 @export var tower_stats: TowerStats:
 	set(value):
-		tower_stats = value.clone()
+		tower_stats = value.duplicate()
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var range_area: Area2D = $AttackRange

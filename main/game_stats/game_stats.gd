@@ -23,11 +23,3 @@ extends Resource
 			return
 		current_wave = value
 		emit_changed()
-
-func clone() -> GameStats:
-	var output := GameStats.new()
-	output.money = money
-	output.lives_left = lives_left
-	output.wave_sequence = wave_sequence
-	output.current_wave = current_wave
-	return output

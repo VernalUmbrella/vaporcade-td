@@ -16,7 +16,7 @@ const TOWER_RESOURCES: Array[TowerStats] = [
 
 @export var game_stats: GameStats:
 	set(value):
-		game_stats = value.clone()
+		game_stats = value.duplicate()
 		if not is_node_ready():
 			await ready
 		hud.game_stats = game_stats

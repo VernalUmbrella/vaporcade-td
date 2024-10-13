@@ -30,7 +30,7 @@ func _on_wave_started() -> void:
 		return
 	active = true
 	remaining_spawns = current_wave.count
-	current_spawn = current_wave.enemy_stats.clone()
+	current_spawn = current_wave.enemy_stats.duplicate()
 	current_spawn.max_health *= current_wave.health_multiplier
 	current_spawn.speed *= current_wave.speed_multiplier
 	spawn_timer.wait_time = current_wave.spawn_interval
